@@ -1,0 +1,6 @@
+.vscode
+*.tar.gz
+.pytest_cache
+cremsburg/sdcloud/tests/*.json
+tests/terraform/
+*.env

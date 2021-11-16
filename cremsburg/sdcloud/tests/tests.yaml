@@ -1,0 +1,50 @@
+---
+### #################################################################
+### # ZTP A NEW FIREWALL
+### #################################################################
+- hosts: localhost
+  gather_facts: False
+  become: False
+  tasks:
+    - name: "### LOGIN "
+      cremsburg.sdcloud.login:
+      register: api_token
+
+    # - debug:
+    #     var: api_token.data
+
+    - name: "### ZTP FIREWALL"
+      cremsburg.sdcloud.ztp:
+
+        # define Security Director Cloud parameters
+        server: "sdcloud-eap.juniperclouds.net"
+        api_token: "{{ api_token.data }}"
+
+        # define request
+        serial: "ABCDEFG123"
+        root_pwd: "juniper123"
+
+        # define to delete or create
+        state: absent
+      register: firewall
+
+    # - debug:
+    #     var: firewall
+
+    - name: "### ONBOARD FIREWALL"
+      cremsburg.sdcloud.device:
+
+        # define Security Director Cloud parameters
+        server: "sdcloud-eap.juniperclouds.net"
+        api_token: "{{ api_token.data }}"
+
+        # define request
+        cluster_type: "STANDALONE"
+        host_name: "local-test"
+
+        # define to delete or create
+        state: absent
+      register: firewall
+
+    - debug:
+        var: firewall

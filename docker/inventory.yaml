@@ -1,0 +1,9 @@
+all:
+  children:
+    sdcloud:
+      hosts:
+        demo:
+          vars:
+            server: "sdcloud-eap.juniperclouds.net"
+            validate_certs: False
+            api_token: "{{ api_token }}"

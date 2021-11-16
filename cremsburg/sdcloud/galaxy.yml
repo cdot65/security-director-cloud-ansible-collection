@@ -1,0 +1,23 @@
+namespace: cremsburg
+name: sdcloud
+version: 0.0.2
+readme: README.md
+authors:
+- Calvin Remsburg <cremsburg@protonmail.com>
+description: Ansible collection for Juniper's Security Director Cloud solution
+license:
+- GPL-2.0-or-later
+license_file: ''
+tags: 
+    - networking
+    - firewall
+    - juniper
+    - sdcloud
+dependencies: {}
+repository: https://gitlab.com/_calvinr/networking/Security-Director-Cloud-Ansible-Collection
+documentation: https://gitlab.com/_calvinr/networking/Security-Director-Cloud-Ansible-Collection/-/blob/master/README.md
+homepage: https://gitlab.com/_calvinr/networking/Security-Director-Cloud-Ansible-Collection/
+issues: https://gitlab.com/_calvinr/networking/Security-Director-Cloud-Ansible-Collection/-/issues
+build_ignore:
+- tests
+- '*.tar.gz'
